@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import './main.css';
+
 import App from './pages/App/App';
 import Topic from './pages/Topic/Topic';
 import Note from './pages/Note/Note';

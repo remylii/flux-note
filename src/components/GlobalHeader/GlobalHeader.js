@@ -9,7 +9,7 @@ export default class GlobalHeader extends React.Component {
 
   render() {
     return (
-      <header className="header">
+      <header className="GlobalHeader-header">
         <ul>
           <li><Link to="/">Top</Link></li>
           <li><Link to="/note">Note</Link></li>

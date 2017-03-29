@@ -37,7 +37,7 @@ class App extends React.Component {
         <GlobalHeader />
 
         <main>
-          <h2>pages / App</h2>
+          <h2 className="App-PageTitle">pages / App</h2>
           <NoteList notes={this.state.notes} />
         </main>
       </div>

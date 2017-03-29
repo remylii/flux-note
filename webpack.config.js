@@ -1,8 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const wp_plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  }),
+
+  new ExtractTextPlugin({
+    filename: 'bundle.css'
   })
 ];
 
@@ -21,6 +26,16 @@ module.exports = {
         test: /\.js$/,
         use: "babel-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader?importLoaders=1',
+            'postcss-loader'
+          ],
+          fallback: 'style-loader'
+        })
       }
     ]
   },
