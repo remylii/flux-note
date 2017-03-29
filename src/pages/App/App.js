@@ -1,16 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
+import { Container } from 'flux/utils';
 import NoteAction from '../../actions/NoteAction';
-
 import noteStore from '../../stores/noteStore';
 
-import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-export default class App extends React.Component {
+import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
+import NoteList from '../../components/NoteList/NoteList';
+
+class App extends React.Component {
 
   static getStores() {
     return [noteStore];
+  }
+
+  static calculateState() {
+    return noteStore.getState();
   }
 
   constructor(props) {
@@ -23,14 +28,21 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.group('App#render');
+    console.dir(this.state);
+    console.groupEnd('App#render');
+
     return (
       <div>
         <GlobalHeader />
 
         <main>
           <h2>pages / App</h2>
+          <NoteList notes={this.state.notes} />
         </main>
       </div>
     );
   }
 }
+
+export default Container.create(App);

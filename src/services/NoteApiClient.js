@@ -4,6 +4,7 @@ let notes = require('./data');
 
 export default class NoteApiClient {
   static request(response) {
+    console.log('services/NoteApiClient#request');
     return new Promise(resolve => {
       setTimeout(() => resolve(response), LATENCY);
     });
