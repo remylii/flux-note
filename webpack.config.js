@@ -18,7 +18,6 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
 
   module: {
     rules: [
@@ -76,5 +75,7 @@ module.exports = {
       hash: false,
       chunckModules: false
     }
-  }
+  },
+
+  devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map'
 };
