@@ -3,8 +3,6 @@ import { Container } from 'flux/utils';
 import NoteAction from '../../actions/NoteAction';
 import noteStore from '../../stores/noteStore';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import NoteList from '../../components/NoteList/NoteList';
 

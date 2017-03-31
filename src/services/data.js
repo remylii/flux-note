@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = [
   {
     "id": 1,
