@@ -1,5 +1,7 @@
 # Flux Note
 
+[![Build Status](https://travis-ci.org/remylii/flux-note.svg?branch=release)](https://travis-ci.org/remylii/flux-note)
+
 ## Stack
 
 - package manager: yarn

@@ -12,3 +12,7 @@ install:
 
 script:
   - yarn run cover
+
+branches:
+  only:
+    - release
